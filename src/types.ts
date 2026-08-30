@@ -87,3 +87,28 @@ export interface StatItem {
   sublabel: string;
   detail: string;
 }
+
+export interface EducationItem {
+  id: string;
+  institution: string;
+  degree: string;
+  field?: string;
+  grade: string;
+  gradeType: 'CGPA' | 'Percentage';
+  period: string;
+  location: string;
+  status: 'current' | 'completed';
+  highlights: string[];
+  icon?: string;
+}
+
+export interface CertificateItem {
+  id: string;
+  title: string;
+  category: string;
+  issuer?: string;
+  issueDate: string;
+  credentialUrl: string;
+  skills: string[];
+  description: string;
+}

@@ -4,7 +4,9 @@ import {
   JourneyMilestone, 
   FocusArea, 
   BeyondCodeItem, 
-  StatItem 
+  StatItem,
+  EducationItem,
+  CertificateItem
 } from '../types';
 
 export const PERSONAL_INFO = {
@@ -13,8 +15,10 @@ export const PERSONAL_INFO = {
   location: "India",
   status: "Available for Opportunities",
   email: "akmkr7551@gmail.com",
-  github: "https://github.com",
+  github: "https://github.com/amankr0026",
   linkedin: "https://linkedin.com",
+  cvUrl: "https://drive.google.com/file/d/1jerCZYtNDqHyqxJKOkbhkgpv01-ynTuy/view?usp=sharing",
+  cvPreviewUrl: "https://drive.google.com/file/d/1jerCZYtNDqHyqxJKOkbhkgpv01-ynTuy/preview",
   heroSubtitle: "Building my foundation in software engineering through C++, Data Structures & Algorithms, web development, and hands-on projects.",
   aboutHeadline: "A little about me.",
   aboutParagraphs: [
@@ -224,232 +228,126 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "dsa-practice-algorithms",
-    title: "DSA Practice & Algorithms Suite",
-    category: "c++-dsa",
-    categoryLabel: "C++ • Algorithms",
-    shortDescription: "A structured collection of C++ implementations covering fundamental data structures, search/sort algorithms, and problem-solving patterns with time/space complexity analysis.",
-    role: "Lead Developer / Student Engineer",
-    status: "Active Practice & Growth",
-    tags: ["C++", "Data Structures", "Algorithms", "STL", "Problem Solving"],
-    githubUrl: "https://github.com",
-    liveDemoUrl: "#",
+    id: "attendify",
+    title: "Attendify",
+    category: "web-dev",
+    categoryLabel: "Web Application • Smart Attendance",
+    shortDescription: "A smart, responsive attendance tracking and calculation web app that enables students to monitor class attendance, analyze criteria percentages, and calculate safe-absence margins.",
+    role: "Creator & Frontend Developer",
+    status: "Live & Deployed",
+    tags: ["React", "JavaScript", "LocalStorage", "Analytics", "Responsive UI", "Tailwind CSS"],
+    githubUrl: "https://github.com/amankr0026/attendify",
+    liveDemoUrl: "https://amankr0026.github.io/attendify/",
+    featured: true,
+    accentColor: "indigo",
+    caseStudy: {
+      overview: "Attendify is an intuitive, privacy-friendly attendance management tool built to help students effortlessly maintain their required attendance criteria (e.g., 75% rule). It eliminates guesswork by providing real-time calculations of current percentage status, critical danger warnings, and exact counts of classes you can afford to miss or must attend.",
+      problem: "College students often struggle to keep track of attendance across multiple courses with varying schedules and attendance policies, frequently resulting in debarment surprises or stressful manual calculations.",
+      approach: "Built a fast, zero-login client-side web application leveraging browser localStorage for instant data persistence, paired with an algorithmic calculation engine that dynamically updates percentage margins on every attendance toggle.",
+      techStackDetails: [
+        { category: "Frontend & UI", items: ["HTML5", "CSS3 / Tailwind CSS", "Modern JavaScript (ES6+)", "Responsive Grid Layouts"] },
+        { category: "State & Storage", items: ["Client-side LocalStorage Engine", "Real-time Attendance Algorithm", "JSON Schema Serialization"] },
+        { category: "Deployment", items: ["GitHub Pages", "Git Version Control", "Live Continuous Deployment"] }
+      ],
+      keyFeatures: [
+        {
+          title: "Instant Percentage & Margin Calculation",
+          description: "Instantly computes overall and subject-specific attendance percentages, calculating exact required attendances or safe absences."
+        },
+        {
+          title: "Subject-Wise Custom Profiles",
+          description: "Add, edit, and categorize courses with custom target criteria percentages (e.g., 75%, 80%, or 85%)."
+        },
+        {
+          title: "Persistent Browser Storage",
+          description: "Automatically saves all subject records and attendance history directly in the browser's localStorage without requiring external database setups."
+        },
+        {
+          title: "Dynamic Visual Status Alerts",
+          description: "Color-coded visual indicators immediately highlight which subjects are in the safe zone or require urgent attendance."
+        }
+      ],
+      challenges: [
+        {
+          challenge: "Designing mathematical formulas that accurately handle edge cases (e.g., 0 total classes, 100% attendance, fractional percentages).",
+          solution: "Implemented robust boundary conditions and zero-division guards to ensure bulletproof calculations under any state."
+        },
+        {
+          challenge: "Creating an ultra-fast mobile workflow so students can update records in 2 seconds between classes.",
+          solution: "Designed one-tap increment/decrement buttons with haptic visual feedback and minimal tap friction."
+        }
+      ],
+      whatILearned: [
+        "How to translate student daily pain points into a dependable, zero-friction digital solution.",
+        "Best practices for reliable client-side state persistence and schema evolution in localStorage.",
+        "Refining mobile responsiveness and touch-friendly user interfaces."
+      ],
+      futureImprovements: [
+        "Timetable integration with automated lecture reminders.",
+        "One-click data export and backup in CSV / JSON format.",
+        "Dark / Light theme customizer."
+      ]
+    }
+  },
+  {
+    id: "staymate",
+    title: "StayMate",
+    category: "web-dev",
+    categoryLabel: "Web Application • Accommodation Finder",
+    shortDescription: "A comprehensive student accommodation and hostel discovery platform featuring multi-attribute search filtering, room amenities showcases, and direct property inquiry workflows.",
+    role: "Frontend & UX Developer",
+    status: "Live & Deployed",
+    tags: ["React", "SPA Architecture", "HashRouter", "Search & Filter", "Tailwind CSS", "UI/UX"],
+    githubUrl: "https://github.com/amankr0026/staymate",
+    liveDemoUrl: "https://amankr0026.github.io/staymate/#/",
     featured: true,
     accentColor: "emerald",
     caseStudy: {
-      overview: "A comprehensive repository of C++ implementations built to master Data Structures and Algorithms from first principles. It includes custom implementations of linear and non-linear data structures, alongside step-by-step solutions to classic algorithmic challenges.",
-      problem: "When learning data structures, relying solely on built-in libraries can create a gap in understanding how memory allocation, pointers, and algorithmic trade-offs operate under the hood.",
-      approach: "Built data structures (like Linked Lists, Stacks, Queues, Binary Trees, and Min/Max Heaps) from scratch using C++ pointers and dynamic memory management before utilizing the Standard Template Library (STL). Benchmarked asymptotic complexity and documented edge cases.",
+      overview: "StayMate is a modern single-page web platform designed to simplify finding student accommodations, hostels, and PGs near universities. It connects students with verified listings, clear pricing structures, transparent amenity breakdowns, and direct contact channels.",
+      problem: "Students moving to new cities often face fragmented hostel listings, unverified room conditions, hidden charges, and difficult communication with property managers.",
+      approach: "Architected a responsive Single-Page Application (SPA) with dynamic filtering pipelines (price, room type, gender preference, amenities), high-resolution gallery cards, and interactive inquiry triggers.",
       techStackDetails: [
-        { category: "Core Language", items: ["C++17 / C++20", "GCC / Clang Compiler"] },
-        { category: "Concepts", items: ["Pointers & Dynamic Memory", "Templates", "STL (Vectors, Maps, Sets)", "Recursion"] },
-        { category: "Environment", items: ["VS Code", "Linux Terminal (g++)", "GDB Debugger"] }
+        { category: "Frontend Framework", items: ["React", "JavaScript (ES6+)", "HashRouter SPA Routing", "Lucide Icons"] },
+        { category: "Styling & UX", items: ["Tailwind CSS", "Responsive Bento Grid", "Smooth Micro-interactions"] },
+        { category: "Hosting & Tools", items: ["GitHub Pages", "Git Version Control", "Component-Driven Architecture"] }
       ],
       keyFeatures: [
         {
-          title: "Custom Data Structure Implementations",
-          description: "Handcrafted Singly & Doubly Linked Lists, Dynamic Arrays, Binary Search Trees, and Priority Queues with memory leak checks."
+          title: "Multi-Attribute Search & Filter Engine",
+          description: "Filter accommodations seamlessly by rent budget, room sharing configuration (single/double/triple), gender preference, and facilities (Wi-Fi, AC, Mess)."
         },
         {
-          title: "Algorithmic Pattern Categorization",
-          description: "Solutions grouped by patterns: Two Pointers, Sliding Window, Binary Search, Divide & Conquer, and Tree Traversals (DFS/BFS)."
+          title: "Rich Property Detail Cards",
+          description: "Detailed cards highlighting verified pricing, room amenities, distance to campus, and image galleries."
         },
         {
-          title: "Asymptotic Complexity Documentation",
-          description: "Every problem includes documented Worst-Case, Average-Case, and Best-Case Time and Auxiliary Space complexities."
+          title: "Direct Inquiry & Visit Scheduling",
+          description: "Built-in inquiry workflows allowing users to request room visits or directly contact hostel owners."
         },
         {
-          title: "Rigorous Test Harness",
-          description: "Unit tests covering boundary conditions: empty structures, single-node trees, duplicates, and large inputs."
+          title: "HashRouter SPA Navigation",
+          description: "Flawless client-side routing tailored for static hosting environments on GitHub Pages without 404 reload errors."
         }
       ],
       challenges: [
         {
-          challenge: "Managing pointers and avoiding segmentation faults in self-referencing nodes.",
-          solution: "Implemented careful null checks, clear memory deallocation routines in destructors, and utilized GDB to trace stack frames."
+          challenge: "Preventing broken page refreshes on static GitHub Pages hosting when using client-side routing.",
+          solution: "Configured React HashRouter (`/#/`) to handle deep links and route transitions reliably across any static CDN."
         },
         {
-          challenge: "Balancing readability with competitive programming efficiency.",
-          solution: "Structured clean modular files with descriptive variable names while utilizing efficient pass-by-reference semantics."
+          challenge: "Balancing detailed property information with clean, non-overwhelming visual card density.",
+          solution: "Organized data into structured badge chips, expandable details, and clear visual hierarchy."
         }
       ],
       whatILearned: [
-        "Deep intuitive understanding of pointer arithmetic and heap vs. stack memory allocation in C++.",
-        "How to mathematically analyze Big-O time and space complexity rather than guessing.",
-        "The internal mechanisms behind STL containers like std::vector resizing and std::unordered_map hashing.",
-        "The discipline of breaking down complex problems into verifiable sub-problems."
+        "Designing scalable data filtering algorithms across complex multi-criteria arrays in React.",
+        "Structuring maintainable component trees for discovery and directory platforms.",
+        "Optimizing SPA performance and asset delivery for high-speed page loads."
       ],
       futureImprovements: [
-        "Add graph algorithms (Dijkstra, Topological Sort, Disjoint Set Union).",
-        "Implement interactive ASCII visualizer for tree rotations and heap operations.",
-        "Add dynamic programming category with memoization vs. tabulation comparisons."
-      ]
-    }
-  },
-  {
-    id: "personal-portfolio-platform",
-    title: "Personal Engineering Portfolio",
-    category: "web-dev",
-    categoryLabel: "Web Development",
-    shortDescription: "A modern, high-performance responsive portfolio crafted to showcase technical growth, interactive project case studies, and engineering philosophy.",
-    role: "UI/UX & Frontend Developer",
-    status: "Completed & Maintained",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Motion", "Responsive Design"],
-    githubUrl: "https://github.com",
-    liveDemoUrl: "#",
-    featured: true,
-    accentColor: "cyan",
-    caseStudy: {
-      overview: "A custom-designed developer portfolio engineered with a minimal, dark-first aesthetic. It focuses on clarity, typography, interactive terminal elements, and structured engineering case studies.",
-      problem: "Standard generic templates often feel cluttered with exaggerated claims or lack authentic student storytelling with deep architectural case studies.",
-      approach: "Designed a clean, content-first layout with high visual hierarchy, subtle micro-interactions, responsive typography, and dedicated modal deep dives for each project.",
-      techStackDetails: [
-        { category: "Frontend Framework", items: ["React 18+", "TypeScript", "Vite"] },
-        { category: "Styling & Animations", items: ["Tailwind CSS", "Motion", "JetBrains Mono"] },
-        { category: "Deployment", items: ["Vercel", "Git Version Control"] }
-      ],
-      keyFeatures: [
-        {
-          title: "Original Dark-First Aesthetic",
-          description: "High-contrast palette with near-black backgrounds, muted slate text, and crisp emerald accents."
-        },
-        {
-          title: "Deep-Dive Case Study Modals",
-          description: "Detailed breakdowns of problems, engineering approaches, challenges, and key learnings."
-        },
-        {
-          title: "Interactive Live Terminal Widget",
-          description: "Hero code execution loop demonstrating programming mindset with clean syntax highlighting."
-        },
-        {
-          title: "Fully Responsive & Accessible",
-          description: "Seamless navigation with hamburger menus for mobile, touch-friendly targets, and semantic tags."
-        }
-      ],
-      challenges: [
-        {
-          challenge: "Creating smooth, non-distracting animations that enhance rather than slow down navigation.",
-          solution: "Leveraged hardware-accelerated transforms and lightweight Motion springs with constrained spring parameters."
-        },
-        {
-          challenge: "Structuring data so projects, skills, and timeline can be updated with zero code friction.",
-          solution: "Separated portfolio content into strictly typed TypeScript data modules."
-        }
-      ],
-      whatILearned: [
-        "Mastery of modern component composition in React and TypeScript type safety.",
-        "How to balance visual sophistication with web performance and accessibility.",
-        "Refined UX sensibilities around spacing, visual rhythm, and typography pairing."
-      ],
-      futureImprovements: [
-        "Add interactive web-based algorithm visualizer playground directly in the browser.",
-        "Integrate RSS / Markdown blog reader for technical notes."
-      ]
-    }
-  },
-  {
-    id: "interactive-web-application",
-    title: "Interactive Web Application & UI System",
-    category: "web-dev",
-    categoryLabel: "Web Development",
-    shortDescription: "A practical web application focused on responsive layout design, interactive state handling, and intuitive user workflows built using modern JavaScript and React.",
-    role: "Frontend Developer",
-    status: "Completed",
-    tags: ["JavaScript", "HTML5", "CSS3", "React", "State Management"],
-    githubUrl: "https://github.com",
-    liveDemoUrl: "#",
-    featured: true,
-    accentColor: "blue",
-    caseStudy: {
-      overview: "A hands-on web application created to apply core web development fundamentals into an interactive user interface with real-time state manipulation and responsive views.",
-      problem: "Translating static designs into dynamic, accessible, and responsive user experiences requires deep practice with event handling, DOM cycles, and state synchronization.",
-      approach: "Constructed modular components with clean prop drilling and React state hooks, implementing client-side validation and immediate visual feedback.",
-      techStackDetails: [
-        { category: "Core Technologies", items: ["HTML5", "CSS3", "JavaScript (ES6+)"] },
-        { category: "Frontend Framework", items: ["React", "Lucide Icons"] },
-        { category: "Tooling", items: ["Vite", "Git", "CSS Flex/Grid"] }
-      ],
-      keyFeatures: [
-        {
-          title: "Dynamic State Management",
-          description: "Seamless user interactions with zero full-page reloads using React hooks (useState, useEffect, useMemo)."
-        },
-        {
-          title: "Adaptive Responsive Layouts",
-          description: "Carefully calibrated CSS Grid and Flexbox structures that reflow gracefully from 320px mobile to 4K displays."
-        },
-        {
-          title: "Form Validation & Feedback",
-          description: "Real-time user input validation with clear visual error states and success notifications."
-        }
-      ],
-      challenges: [
-        {
-          challenge: "Preventing unnecessary re-renders when managing multiple interactive elements.",
-          solution: "Extracted isolated sub-components and used proper dependency arrays in React effects."
-        }
-      ],
-      whatILearned: [
-        "Component lifecycle and the power of unidirectional data flow in modern web apps.",
-        "Best practices for mobile responsiveness and cross-browser consistency.",
-        "How to structure maintainable CSS without class bloat."
-      ],
-      futureImprovements: [
-        "Connect to a persistent backend database.",
-        "Add theme customizer and exportable user data."
-      ]
-    }
-  },
-  {
-    id: "cpp-student-management-system",
-    title: "C++ Student Records & Data Engine",
-    category: "tools-systems",
-    categoryLabel: "C++ • Systems",
-    shortDescription: "A console-based object-oriented data management tool in C++ demonstrating file I/O streams, binary persistence, class inheritance, and search indexing.",
-    role: "Developer",
-    status: "Completed",
-    tags: ["C++", "OOP", "File Handling", "Streams", "CLI"],
-    githubUrl: "https://github.com",
-    liveDemoUrl: "#",
-    featured: false,
-    accentColor: "violet",
-    caseStudy: {
-      overview: "An object-oriented CLI system built in C++ to model real-world record management using file serialization, encapsulation, and menu-driven command navigation.",
-      problem: "Understanding how software persists structured data to secondary storage without relying on external relational database servers.",
-      approach: "Utilized C++ fstream libraries (ifstream, ofstream) in binary mode to serialize and deserialize custom record objects with integrity checks and search filters.",
-      techStackDetails: [
-        { category: "Language", items: ["C++17"] },
-        { category: "Libraries", items: ["<fstream>", "<iostream>", "<vector>", "<iomanip>"] },
-        { category: "Concepts", items: ["Object-Oriented Design", "File Streams", "Exception Handling"] }
-      ],
-      keyFeatures: [
-        {
-          title: "Binary File Persistence",
-          description: "Saves and loads student records reliably with binary read/write operations."
-        },
-        {
-          title: "Multi-parameter Search & Sort",
-          description: "Search records by ID, name, or academic standing using custom sorting comparators."
-        },
-        {
-          title: "Encapsulation & Validation",
-          description: "Strict class mutators to ensure invalid grades or corrupted IDs are rejected before saving."
-        }
-      ],
-      challenges: [
-        {
-          challenge: "Handling binary file corruption when modifying existing record offsets.",
-          solution: "Implemented temporary scratch files and atomic file replacement logic on update/delete operations."
-        }
-      ],
-      whatILearned: [
-        "Practical understanding of file pointers (seekg, seekp) and stream states in C++.",
-        "How OOP principles enforce data validation boundaries.",
-        "CLI UX design principles for terminal-based tools."
-      ],
-      futureImprovements: [
-        "Add an interactive TUI (Terminal User Interface) using ncurses.",
-        "Implement encrypted record storage."
+        "Interactive campus distance calculator with map integration.",
+        "Verified student review system with rating breakdowns for food, cleanliness, and security.",
+        "Wishlist and saved properties comparison tool."
       ]
     }
   }
@@ -605,3 +503,78 @@ export const BEYOND_CODE_ITEMS: BeyondCodeItem[] = [
     connectionToEngineering: "Fuels curiosity to understand what happens beneath the software abstractions."
   }
 ];
+
+export const EDUCATION_ITEMS: EducationItem[] = [
+  {
+    id: "edu-lpu",
+    institution: "Lovely Professional University",
+    degree: "Bachelor of Technology",
+    field: "Computer Science and Engineering",
+    grade: "8.04 CGPA",
+    gradeType: "CGPA",
+    period: "Aug 2025 - Present",
+    location: "Phagwara, Punjab",
+    status: "current",
+    highlights: [
+      "Core curriculum: Data Structures & Algorithms, Object-Oriented Programming (C++), Operating Systems & Computer Architecture",
+      "Building practical software engineering fundamentals with strong algorithmic problem-solving",
+      "Actively developing full-stack web applications and technical CS projects"
+    ]
+  },
+  {
+    id: "edu-dav-xii",
+    institution: "D.A.V Public School, Ara Kuju",
+    degree: "Higher Secondary Education (Class XII)",
+    field: "Science Stream (PCM & Computer Science)",
+    grade: "85%",
+    gradeType: "Percentage",
+    period: "May 2023 - Mar 2025",
+    location: "Ramgarh, Jharkhand",
+    status: "completed",
+    highlights: [
+      "Rigorous foundations in Physics, Chemistry, Mathematics, and Computer Science fundamentals",
+      "Developed strong quantitative analysis and logical deduction skills",
+      "Consistent academic performance across analytical disciplines"
+    ]
+  },
+  {
+    id: "edu-dav-x",
+    institution: "D.A.V Public School, Ara Kuju",
+    degree: "Secondary Education (Class X)",
+    field: "General & Foundational Sciences",
+    grade: "92%",
+    gradeType: "Percentage",
+    period: "Jun 2022 - Mar 2023",
+    location: "Ramgarh, Jharkhand",
+    status: "completed",
+    highlights: [
+      "High academic standing graduating with distinction (92%)",
+      "Excellence in Mathematics, Science, and Analytical Studies",
+      "Participated in school science and competitive logic activities"
+    ]
+  }
+];
+
+export const CERTIFICATES: CertificateItem[] = [
+  {
+    id: "cert-fullstack",
+    title: "Learn Full Stack Web Development from Frontend to Backend",
+    category: "Full Stack Development",
+    issuer: "Certified Web Course",
+    issueDate: "Sep 2025",
+    credentialUrl: "https://drive.google.com/file/d/1_xRRjxnaa-cWSV7lbq2o00T4MXi-AFb3/view?usp=sharing",
+    skills: ["React", "JavaScript (ES6+)", "Node.js Basics", "RESTful APIs", "HTML5 & CSS3", "Modern Frontend Architecture"],
+    description: "Comprehensive end-to-end training covering client-side component architecture, responsive styling, API communication, backend integration, and full lifecycle web application delivery."
+  },
+  {
+    id: "cert-python",
+    title: "Master Python Programming with OOP, Data Structures, and Libraries",
+    category: "Python & Core Programming",
+    issuer: "Certified Python Masterclass",
+    issueDate: "May 2025",
+    credentialUrl: "https://drive.google.com/file/d/1ST6XJL74iYAAoRts9XRDr4sMFbbgT8ay/view?usp=sharing",
+    skills: ["Python 3", "Object-Oriented Programming", "Data Structures", "Standard Libraries", "Modular Code", "Algorithm Logic"],
+    description: "In-depth specialization into Python core concepts, object-oriented design patterns, complex data structure manipulation, script automation, and practical standard library modules."
+  }
+];
+

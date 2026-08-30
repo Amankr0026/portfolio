@@ -3,8 +3,10 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { QuickStats } from './components/QuickStats';
 import { AboutSection } from './components/AboutSection';
+import { EducationSection } from './components/EducationSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
+import { CertificatesSection } from './components/CertificatesSection';
 import { ProjectCaseStudyModal } from './components/ProjectCaseStudyModal';
 import { JourneySection } from './components/JourneySection';
 import { CurrentlyLearningSection } from './components/CurrentlyLearningSection';
@@ -26,13 +28,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090a0f] text-slate-100 font-sans selection:bg-emerald-500/30 selection:text-emerald-300 relative">
+    <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-indigo-500/30 selection:text-indigo-200 relative">
       
-      {/* Background ambient lighting effects */}
+      {/* Background ambient lighting effects for Bento Grid */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-emerald-500/5 rounded-full blur-[140px]" />
-        <div className="absolute top-1/3 -left-40 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[160px]" />
-        <div className="absolute bottom-1/4 -right-40 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[160px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-500/8 rounded-full blur-[140px]" />
+        <div className="absolute top-1/3 -left-40 w-[600px] h-[600px] bg-indigo-600/5 rounded-full blur-[160px]" />
+        <div className="absolute bottom-1/4 -right-40 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[160px]" />
       </div>
 
       {/* Navigation Header */}
@@ -52,22 +54,28 @@ export default function App() {
         {/* 3. About Section (Includes Profile Picture & Developer Specification) */}
         <AboutSection />
 
-        {/* 4. Technical Skills */}
+        {/* 4. Education Section */}
+        <EducationSection />
+
+        {/* 5. Technical Skills */}
         <SkillsSection />
 
-        {/* 5. Projects Section */}
+        {/* 6. Projects Section */}
         <ProjectsSection onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* 6. Learning Journey Timeline */}
+        {/* 7. Certificates & Credentials Section */}
+        <CertificatesSection />
+
+        {/* 8. Learning Journey Timeline */}
         <JourneySection />
 
-        {/* 7. Currently Learning / Active Focus */}
+        {/* 9. Currently Learning / Active Focus */}
         <CurrentlyLearningSection />
 
-        {/* 8. Beyond the Code */}
+        {/* 10. Beyond the Code */}
         <BeyondCodeSection />
 
-        {/* 9. Contact Section */}
+        {/* 11. Contact Section */}
         <ContactSection />
       </main>
 
@@ -89,3 +97,4 @@ export default function App() {
     </div>
   );
 }
+
